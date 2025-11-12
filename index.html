@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gym Workout App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header-template" class="hidden">
+        <div class="header">
+            <button class="btn-back header-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <h1 class="page-title"></h1>
+            <button class="btn-dark-mode header-btn">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                <svg class="icon-sun hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-12.66l-.7.7m-12.62 12.62l-.7.7M21 12h-1M4 12H3m16.66-7.34l-.7-.7M7.34 19.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+<div id="detail-nav-template" class="hidden">
+    <div class="detail-nav">
+        <button class="btn-prev detail-nav-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Previous
+        </button>
+        <button class="btn-next detail-nav-btn">
+            Next
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+</div>
+
+
+    <div class="page-container">
+
+        <div id="page-home" class="page">
+            <div class="home-header">
+                <h1 class="home-title">GYM Exercise</h1>
+                <button class="btn-dark-mode header-btn">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg class="icon-sun hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-12.66l-.7.7m-12.62 12.62l-.7.7M21 12h-1M4 12H3m16.66-7.34l-.7-.7M7.34 19.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                    </svg>
+                </button>
+            </div>
+            <p class="home-subtitle">Your weekly guide</p>
+
+            <div class="grid grid-cols-2 gap-5">
+                <div class="day-block" data-target="page-monday" data-title="Chest Exercise">
+                    <h2>Monday</h2>
+                    <p>Chest</p>
+                </div>
+                <div class="day-block" data-target="page-tuesday" data-title="Back Exercise">
+                    <h2>Tuesday</h2><p>Back</p>
+                </div>
+                <div class="day-block" data-target="page-wednesday" data-title="Biceps Exercise">
+                    <h2>Wednesday</h2><p>Biceps & Forearm</p>
+                </div>
+                <div class="day-block" data-target="page-thursday" data-title="Triceps Exercise">
+                    <h2>Thursday</h2><p>Triceps</p>
+                </div>
+                <div class="day-block" data-target="page-friday" data-title="Friday">
+                    <h2>Friday</h2><p>Shoulder</p>
+                </div>
+                <div class="day-block" data-target="page-saturday" data-title="Saturday">
+                    <h2>Saturday</h2><p>Abs & Forearm</p>
+                </div>
+                <div class="day-block" data-target="page-sunday" data-title="Sunday">
+                    <h2>Sunday</h2><p>Leg</p>
+                </div>
+                <div class="day-block" data-target="page-protips" data-title="Pro Tips">
+                    <h2>Pro Tips</h2><p>Helpful Guides</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-monday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-monday-ex1" data-title="Wrist Curls">Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex2" data-title="Reverse Wrist Curls">Reverse Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex3" data-title="Dumbbell Wrist Twists">Dumbbell Wrist Twists</div>
+                <div class="exercise-block" data-target="page-monday-ex4" data-title="Barbell Wrist Curls">Barbell Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex5" data-title="Behind-the-Back Curls">Behind-the-Back Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex6" data-title="Cable Wrist Curls">Cable Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex7" data-title="Seated Wrist Curls">Seated Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex8" data-title="Standing Wrist Curls">Standing Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex9" data-title="Plate Wrist Curls">Plate Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex10" data-title="Kettlebell Wrist Curls">Kettlebell Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex11" data-title="Incline Wrist Curls">Incline Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex12" data-title="Decline Wrist Curls">Decline Wrist Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex13" data-title="Single-Arm Curls">Single-Arm Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex14" data-title="Wrist Roller">Wrist Roller</div>
+                <div class="exercise-block" data-target="page-monday-ex15" data-title="Towel Hangs">Towel Hangs</div>
+                <div class="exercise-block" data-target="page-monday-ex16" data-title="Fat Grip Curls">Fat Grip Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex17" data-title="Zottman Curls">Zottman Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex18" data-title="Hammer Curls">Hammer Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex19" data-title="Reverse Curls">Reverse Curls</div>
+                <div class="exercise-block" data-target="page-monday-ex20" data-title="Grip Squeezes">Grip Squeezes</div>
+            </div>
+        </div>
+        
+        <div id="page-tuesday" class="page">
+             <div class="space-y-5">
+                <div class="exercise-block" data-target="page-tuesday-ex1" data-title="Reverse Wrist Curls">Reverse Wrist Curls</div>
+                <div class="exercise-block" data-target="page-tuesday-ex2" data-title="Hammer Curls">Hammer Curls</div>
+                <div class="exercise-block" data-target="page-tuesday-ex3" data-title="Towel Pull-ups">Towel Pull-ups</div>
+            </div>
+        </div>
+
+        <div id="page-wednesday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-wednesday-ex1" data-title="Grip Squeezes">Grip Squeezes</div>
+                <div class="exercise-block" data-target="page-wednesday-ex2" data-title="Plate Pinches">Plate Pinches</div>
+                <div class="exercise-block" data-target="page-wednesday-ex3" data-title="Dead Hangs">Dead Hangs</div>
+            </div>
+        </div>
+        
+        <div id="page-thursday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-thursday-ex1" data-title="Farmer's Walk">Farmer's Walk</div>
+            </div>
+        </div>
+
+        <div id="page-friday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-friday-ex1" data-title="Zottman Curls">Zottman Curls</div>
+            </div>
+        </div>
+        
+        <div id="page-saturday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-saturday-ex1" data-title="Plate Pinches">Plate Pinches</div>
+            </div>
+        </div>
+
+        <div id="page-sunday" class::"page">
+            <div class="detail-content">
+                <h2>Rest & Recovery</h2>
+                <p>Rest days are as important as workout days. This is when your muscles repair, grow stronger, and recover. Don't skip them!</p>
+                <ul>
+                    <li>Aim for 7-9 hours of quality sleep.</li>
+                    <li>Stay hydrated by drinking plenty of water.</li>
+                    <li>Eat nutrient-dense foods to fuel recovery.</li>
+                    <li>Engage in light activity like walking or stretching.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="page-protips" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-tip-1" data-title="Tip: Warm-up">Tip: Warm-up</div>
+                <div class="exercise-block" data-target="page-tip-2" data-title="Tip: Focus on Form">Tip: Focus on Form</div>
+                <div class="exercise-block" data-target="page-tip-3" data-title="Tip: Cool-down">Tip: Cool-down</div>
+            </div>
+        </div>
+
+        <div id="page-monday-ex1" class="page"><div class="detail-content">
+                  <main class="exercise-content">
+            <div class="image-section">
+                <img src="anuj.jpg" alt="Demonstration of Wrist Curls Exercise" class="exercise-image">
+                <p class="image-caption">Wrist Curls with a Dumbbell</p>
+            </div>
+
+            <section class="description-card">
+                <h2 class="sh2" >Description</h2>
+                <p>
+                    The wrist curl is a strength training exercise that targets the forearm flexors on the underside of your forearm. It is typically performed with a barbell or dumbbell while resting the forearms on the thighs or a bench.
+                </p>
+            </section>
+
+ 
+            <section class="tracker-card">
+                <h2 class="sh2">Current Goal</h2>
+                <div class="tracker-info">
+                    <span class="set-count">3 Sets</span>
+                    <span class="rep-count">12 Reps</span>
+                </div>
+            </section>
+        </main>
+    </div>
+        </div></div>
+        <div id="page-monday-ex2" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 2: Reverse Wrist Curls. Targets the top of the forearms.</p></div></div>
+        <div id="page-monday-ex3" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 3: Dumbbell Wrist Twists. Good for supination and pronation.</p></div></div>
+        <div id="page-monday-ex4" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 4: Barbell Wrist Curls. A classic mass builder.</p></div></div>
+        <div id="page-monday-ex5" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 5: Behind-the-Back Curls. Offers a different stretch.</p></div></div>
+        <div id="page-monday-ex6" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 6: Cable Wrist Curls. Provides constant tension.</p></div></div>
+        <div id="page-monday-ex7" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 7: Seated Wrist Curls. Isolates the forearms well. .</p></div></div>
+        <div id="page-monday-ex8" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 8: Standing Wrist Curls. Engages more stabilizers.</p></div></div>
+        <div id="page-monday-ex9" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 9: Plate Wrist Curls. Also helps with pinch grip.</p></div></div>
+        <div id="page-monday-ex10" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 10: Kettlebell Wrist Curls. The offset weight adds challenge.</p></div></div>
+        <div id="page-monday-ex11" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 11: Incline Wrist Curls. Changes the angle of resistance.</p></div></div>
+        <div id="page-monday-ex12" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 12: Decline Wrist Curls. Another way to vary the angle.</p></div></div>
+        <div id="page-monday-ex13" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 13: Single-Arm Curls. Helps correct muscle imbalances.</p></div></div>
+        <div id="page-monday-ex14" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 14: Wrist Roller. A tough but effective exercise.</p></div></div>
+        <div id="page-monday-ex15" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 15: Towel Hangs. Brutal on the grip.</p></div></div>
+        <div id="page-monday-ex16" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 16: Fat Grip Curls. Makes any curl a forearm builder.</p></div></div>
+        <div id="page-monday-ex17" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 17: Zottman Curls. Hits biceps and forearms.</p></div></div>
+        <div id="page-monday-ex18" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 18: Hammer Curls. Builds the brachialis muscle.</p></div></div>
+        <div id="page-monday-ex19" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 19: Reverse Curls. Great for forearm extensors.</p></div></div>
+        <div id="page-monday-ex20" class="page"><div class="detail-content"><p>Demo paragraph for Monday Exercise 20: Grip Squeezes. Do this anytime, anywhere.</p></div></div>
+
+        <div id="page-tuesday-ex1" class="page"><div class="detail-content"><p>Demo paragraph for Tuesday Exercise 1: Reverse Wrist Curls.</p></div></div>
+        <div id="page-tuesday-ex2" class="page"><div class="detail-content"><p>Demo paragraph for Tuesday Exercise 2: Hammer Curls.</p></div></div>
+        <div id="page-tuesday-ex3" class="page"><div class="detail-content"><p>Demo paragraph for Tuesday Exercise 3: Towel Pull-ups.</p></div></div>
+        
+        <div id="page-wednesday-ex1" class="page"><div class="detail-content"><p>Demo paragraph for Wednesday Exercise 1: Grip Squeezes.</p></div></div>
+        <div id="page-wednesday-ex2" class="page"><div class="detail-content"><p>Demo paragraph for Wednesday Exercise 2: Plate Pinches.</p></div></div>
+        <div id="page-wednesday-ex3" class="page"><div class="detail-content"><p>Demo paragraph for Wednesday Exercise 3: Dead Hangs.</p></div></div>
+        
+        <div id="page-thursday-ex1" class="page"><div class="detail-content"><p>Demo paragraph for Thursday Exercise 1: Farmer's Walk.</p></div></div>
+        <div id="page-friday-ex1" class="page"><div class="detail-content"><p>Demo paragraph for Friday Exercise 1: Zottman Curls.</p></div></div>
+        <div id="page-saturday-ex1" class="page"><div class="detail-content"><p>Demo paragraph for Saturday Exercise 1: Plate Pinches.</p></div></div>
+        wq  <div id="page-sanday-ex1" class="page"><div class="detail-content"><p>Demo paragraph for Saturday Exercise 1: Plate Pinches.</p></div></div>
+
+        <div id="page-tip-1" class="page">
+            <div class="detail-content">
+                <h2>Tip: Always Warm-up</h2>
+                <p>Never skip your warm-up. A good 5-10 minutes of light cardio (like jumping jacks or jogging in place) followed by dynamic stretches (like arm circles) prepares your muscles for work, increases blood flow, and reduces the risk of injury.</p>
+            </div>
+        </div>
+        <div id="page-tip-2" class="page">
+            <div class="detail-content">
+                <h2>Tip: Focus on Form</h2>
+                <p>Proper form is more important than heavy weight. Bad form not only leads to injury but also means you aren't working the target muscle effectively. Start light, master the movement, and only then increase the weight. Focus on the mind-muscle connection.</p>
+            </div>
+        </div>
+        <div id="page-tip-3" class="page">
+            <div class="detail-content">
+                <h2>Tip: Don't Forget to Cool-down</h2>
+                <p>After your workout, take 5 minutes to cool down. This can include light stretching of the muscles you just worked. A cool-down helps bring your heart rate back to normal gradually and can aid in recovery by promoting blood flow and reducing muscle soreness.</p>
+            </div>
+        </div>
+
+    </div>
+
+        <script src="script.js"></script>
+
+</body>
+</html>
