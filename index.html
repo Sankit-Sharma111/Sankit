@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gym Workout App</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div id="header-template" class="hidden">
+        <div class="header">
+            <button class="btn-back header-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <h1 class="page-title"></h1>
+            <button class="btn-dark-mode header-btn">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                <svg class="icon-sun hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-12.66l-.7.7m-12.62 12.62l-.7.7M21 12h-1M4 12H3m16.66-7.34l-.7-.7M7.34 19.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="page-container">
+
+        <div id="page-home" class="page tab-active">
+            <div class="home-header">
+                <h1 class="home-title">GYM Exercise</h1>
+                <button class="btn-dark-mode header-btn">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg class="icon-sun hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-12.66l-.7.7m-12.62 12.62l-.7.7M21 12h-1M4 12H3m16.66-7.34l-.7-.7M7.34 19.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                    </svg>
+                </button>
+            </div>
+            <p class="home-subtitle">Your weekly guide</p>
+
+            <div class="grid grid-cols-2 gap-5">
+                <div class="day-block" data-target="page-monday" data-title="Chest Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/chest.jpg" alt="Chest" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Chest</h2></div>
+                </div>
+                <div class="day-block" data-target="page-tuesday" data-title="Back Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/back.jpg" alt="Back" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Back</h2></div>
+                </div>
+                <div class="day-block" data-target="page-wednesday" data-title="Biceps Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/biceps.jpg" alt="Biceps" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Biceps</h2></div>
+                </div>
+                <div class="day-block" data-target="page-thursday" data-title="Triceps Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/tricep.jpg" alt="Triceps" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Triceps</h2></div>
+                </div>
+                
+                <div class="day-block" data-target="page-forearm" data-title="Forearm Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/forearm.jpg" alt="Forearm" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Forearm</h2></div>
+                </div>
+
+                <div class="day-block" data-target="page-friday" data-title="Shoulder Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/shoulder.jpg" alt="Shoulder" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Shoulder</h2></div>
+                </div>
+                <div class="day-block" data-target="page-saturday" data-title="Abs Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/abs.jpg" alt="Abs" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Abs</h2></div>
+                </div>
+                <div class="day-block" data-target="page-sunday" data-title="Leg Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/leg.jpg" alt="Legs" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Leg</h2></div>
+                </div>
+                <div class="day-block" data-target="page-cardio" data-title="Cardio Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/cardio.jpg" alt="Cardio" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Cardio</h2></div>
+                </div>
+                <div class="day-block" data-target="page-calf" data-title="Calf Exercise">
+                    <img src="https://ik.imagekit.io/Sankit/calf.jpg" alt="Calf" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Calf</h2></div>
+                </div>
+                <div class="day-block" data-target="page-protips" data-title="Pro Tips">
+                    <img src="https://ik.imagekit.io/Sankit/tip.jpg" alt="Pro Tips" class="day-block-image">
+                    <div class="day-block-overlay"></div>
+                    <div class="day-block-content"><h2>Pro Tips</h2><p>Guides</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-tools" class="page">
+            <div class="empty-state"><h2>Tools</h2><p>Coming Soon</p></div>
+        </div>
+        <div id="page-more" class="page">
+            <div class="empty-state"><h2>More</h2><p>More options coming soon</p></div>
+        </div>
+
+        <div id="page-monday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-monday-ex1" data-title="Bench Press"><img src="https://ik.imagekit.io/Sankit/chest-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Bench Press</span></div>
+                <div class="exercise-block" data-target="page-monday-ex2" data-title="Incline Machine"><img src="https://ik.imagekit.io/Sankit/chest-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Incline Machine</span></div>
+                <div class="exercise-block" data-target="page-monday-ex3" data-title="Decline Machine"><img src="https://ik.imagekit.io/Sankit/chest-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Decline Machine</span></div>
+                <div class="exercise-block" data-target="page-monday-ex4" data-title="Pec Deck Fly"><img src="https://ik.imagekit.io/Sankit/chest-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Pec Deck Fly</span></div>
+                <div class="exercise-block" data-target="page-monday-ex5" data-title="Dumbbell Press"><img src="https://ik.imagekit.io/Sankit/chest-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Dumbbell Press</span></div>
+                <div class="exercise-block" data-target="page-monday-ex6" data-title="Push-ups"><img src="https://ik.imagekit.io/Sankit/chest-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Push-ups</span></div>
+                <div class="exercise-block" data-target="page-monday-ex7" data-title="Cable Crossover"><img src="https://ik.imagekit.io/Sankit/chest-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Cable Crossover</span></div>
+                <div class="exercise-block" data-target="page-monday-ex8" data-title="Dumbbell Fly"><img src="https://ik.imagekit.io/Sankit/chest-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Dumbbell Fly</span></div>
+                <div class="exercise-block" data-target="page-monday-ex9" data-title="Incline DB Fly"><img src="https://ik.imagekit.io/Sankit/chest-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Incline DB Fly</span></div>
+                <div class="exercise-block" data-target="page-monday-ex10" data-title="Incline Bench"><img src="https://ik.imagekit.io/Sankit/chest-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Incline Bench</span></div>
+            </div>
+        </div>
+
+        <div id="page-tuesday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-tuesday-ex1" data-title="Lat Pulldown"><img src="https://ik.imagekit.io/Sankit/back-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Lat Pulldown</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex2" data-title="Seated Row"><img src="https://ik.imagekit.io/Sankit/back-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Seated Row</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex3" data-title="Bent Over Row"><img src="https://ik.imagekit.io/Sankit/back-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Bent Over Row</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex4" data-title="Pull-ups"><img src="https://ik.imagekit.io/Sankit/back-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Pull-ups</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex5" data-title="Deadlift"><img src="https://ik.imagekit.io/Sankit/back-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Deadlift</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex6" data-title="T-Bar Row"><img src="https://ik.imagekit.io/Sankit/back-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">T-Bar Row</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex7" data-title="Dumbbell Row"><img src="https://ik.imagekit.io/Sankit/back-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Dumbbell Row</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex8" data-title="Back Extension"><img src="https://ik.imagekit.io/Sankit/back-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Back Extension</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex9" data-title="Straight Arm Pull"><img src="https://ik.imagekit.io/Sankit/back-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Straight Arm Pull</span></div>
+                <div class="exercise-block" data-target="page-tuesday-ex10" data-title="Single Arm Row"><img src="https://ik.imagekit.io/Sankit/back-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Single Arm Row</span></div>
+            </div>
+        </div>
+
+        <div id="page-wednesday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-wednesday-ex1" data-title="Bicep Curls"><img src="https://ik.imagekit.io/Sankit/bicep-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Bicep Curls</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex2" data-title="Hammer Curls"><img src="https://ik.imagekit.io/Sankit/bicep-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Hammer Curls</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex3" data-title="Preacher Curls"><img src="https://ik.imagekit.io/Sankit/bicep-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Preacher Curls</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex4" data-title="Concentration Curl"><img src="https://ik.imagekit.io/Sankit/bicep-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Concentration Curl</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex5" data-title="Wrist Curls"><img src="https://ik.imagekit.io/Sankit/bicep-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Wrist Curls</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex6" data-title="Reverse Wrist Curl"><img src="https://ik.imagekit.io/Sankit/bicep-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Reverse Wrist Curl</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex7" data-title="Cable Curls"><img src="https://ik.imagekit.io/Sankit/bicep-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Cable Curls</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex8" data-title="Barbell Curl"><img src="https://ik.imagekit.io/Sankit/bicep-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Barbell Curl</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex9" data-title="Drag Curl"><img src="https://ik.imagekit.io/Sankit/bicep-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Drag Curl</span></div>
+                <div class="exercise-block" data-target="page-wednesday-ex10" data-title="Zottman Curl"><img src="https://ik.imagekit.io/Sankit/bicep-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Zottman Curl</span></div>
+            </div>
+        </div>
+
+        <div id="page-thursday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-thursday-ex1" data-title="Overhead Cable"><img src="https://ik.imagekit.io/Sankit/tricep-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Overhead Cable</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex2" data-title="One Arm Cable"><img src="https://ik.imagekit.io/Sankit/tricep-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">One Arm Cable</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex3" data-title="Skullcrushers"><img src="https://ik.imagekit.io/Sankit/tricep-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Skullcrushers</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex4" data-title="Pushdown"><img src="https://ik.imagekit.io/Sankit/tricep-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Pushdown</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex5" data-title="Overhead DB Ext"><img src="https://ik.imagekit.io/Sankit/tricep-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Overhead DB Ext</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex6" data-title="Kickbacks"><img src="https://ik.imagekit.io/Sankit/tricep-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Kickbacks</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex7" data-title="Diamond Push-ups"><img src="https://ik.imagekit.io/Sankit/tricep-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Diamond Push-ups</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex8" data-title="Rope Pushdown"><img src="https://ik.imagekit.io/Sankit/tricep-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Rope Pushdown</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex9" data-title="Dips"><img src="https://ik.imagekit.io/Sankit/tricep-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Dips</span></div>
+                <div class="exercise-block" data-target="page-thursday-ex10" data-title="Close Grip Bench"><img src="https://ik.imagekit.io/Sankit/tricep-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Close Grip Bench</span></div>
+            </div>
+        </div>
+        
+        <div id="page-forearm" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-forearm-ex1" data-title="Wrist Curl"><img src="https://ik.imagekit.io/Sankit/forearm-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Wrist Curl</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex2" data-title="Reverse Wrist Curl"><img src="https://ik.imagekit.io/Sankit/forearm-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Reverse Wrist Curl</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex3" data-title="Hammer Curl"><img src="https://ik.imagekit.io/Sankit/forearm-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Hammer Curl</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex4" data-title="Farmer's Walk"><img src="https://ik.imagekit.io/Sankit/forearm-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Farmer's Walk</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex5" data-title="Plate Pinch"><img src="https://ik.imagekit.io/Sankit/forearm-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Plate Pinch</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex6" data-title="Dead Hang"><img src="https://ik.imagekit.io/Sankit/forearm-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Dead Hang</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex7" data-title="Reverse Barbell Curl"><img src="https://ik.imagekit.io/Sankit/forearm-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Reverse Barbell Curl</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex8" data-title="Zottman Curl"><img src="https://ik.imagekit.io/Sankit/forearm-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Zottman Curl</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex9" data-title="Wrist Roller"><img src="https://ik.imagekit.io/Sankit/forearm-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Wrist Roller</span></div>
+                <div class="exercise-block" data-target="page-forearm-ex10" data-title="Towel Pull-up"><img src="https://ik.imagekit.io/Sankit/forearm-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Towel Pull-up</span></div>
+            </div>
+        </div>
+
+        <div id="page-friday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-friday-ex1" data-title="Overhead Press"><img src="https://ik.imagekit.io/Sankit/shoulder-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Overhead Press</span></div>
+                <div class="exercise-block" data-target="page-friday-ex2" data-title="Lateral Raises"><img src="https://ik.imagekit.io/Sankit/shoulder-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Lateral Raises</span></div>
+                <div class="exercise-block" data-target="page-friday-ex3" data-title="Front Raises"><img src="https://ik.imagekit.io/Sankit/shoulder-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Front Raises</span></div>
+                <div class="exercise-block" data-target="page-friday-ex4" data-title="Reverse Pec Deck"><img src="https://ik.imagekit.io/Sankit/shoulder-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Reverse Pec Deck</span></div>
+                <div class="exercise-block" data-target="page-friday-ex5" data-title="Arnold Press"><img src="https://ik.imagekit.io/Sankit/shoulder-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Arnold Press</span></div>
+                <div class="exercise-block" data-target="page-friday-ex6" data-title="Upright Row"><img src="https://ik.imagekit.io/Sankit/shoulder-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Upright Row</span></div>
+                <div class="exercise-block" data-target="page-friday-ex7" data-title="Face Pulls"><img src="https://ik.imagekit.io/Sankit/shoulder-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Face Pulls</span></div>
+                <div class="exercise-block" data-target="page-friday-ex8" data-title="Shrugs"><img src="https://ik.imagekit.io/Sankit/shoulder-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Shrugs</span></div>
+                <div class="exercise-block" data-target="page-friday-ex9" data-title="Seated DB Press"><img src="https://ik.imagekit.io/Sankit/shoulder-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Seated DB Press</span></div>
+                <div class="exercise-block" data-target="page-friday-ex10" data-title="Cable Lateral"><img src="https://ik.imagekit.io/Sankit/shoulder-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Cable Lateral</span></div>
+            </div>
+        </div>
+
+        <div id="page-saturday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-saturday-ex1" data-title="Crunches"><img src="https://ik.imagekit.io/Sankit/abs-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Crunches</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex2" data-title="Leg Raises"><img src="https://ik.imagekit.io/Sankit/abs-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Leg Raises</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex3" data-title="Plank"><img src="https://ik.imagekit.io/Sankit/abs-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Plank</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex4" data-title="Russian Twist"><img src="https://ik.imagekit.io/Sankit/abs-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Russian Twist</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex5" data-title="Farmer's Walk"><img src="https://ik.imagekit.io/Sankit/abs-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Farmer's Walk</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex6" data-title="Dead Hangs"><img src="https://ik.imagekit.io/Sankit/abs-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Dead Hangs</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex7" data-title="Grip Squeezes"><img src="https://ik.imagekit.io/Sankit/abs-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Grip Squeezes</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex8" data-title="Cable Crunches"><img src="https://ik.imagekit.io/Sankit/abs-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Cable Crunches</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex9" data-title="Bicycle Crunches"><img src="https://ik.imagekit.io/Sankit/abs-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Bicycle Crunches</span></div>
+                <div class="exercise-block" data-target="page-saturday-ex10" data-title="Hanging Leg Raise"><img src="https://ik.imagekit.io/Sankit/abs-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Hanging Leg Raise</span></div>
+            </div>
+        </div>
+
+        <div id="page-sunday" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-sunday-ex1" data-title="Squats"><img src="https://ik.imagekit.io/Sankit/leg-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Squats</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex2" data-title="Leg Press"><img src="https://ik.imagekit.io/Sankit/leg-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Leg Press</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex3" data-title="Lunges"><img src="https://ik.imagekit.io/Sankit/leg-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Lunges</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex4" data-title="Leg Curls"><img src="https://ik.imagekit.io/Sankit/leg-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Leg Curls</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex5" data-title="Leg Extensions"><img src="https://ik.imagekit.io/Sankit/leg-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Leg Extensions</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex6" data-title="Calf Raises"><img src="https://ik.imagekit.io/Sankit/leg-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Calf Raises</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex7" data-title="RDL"><img src="https://ik.imagekit.io/Sankit/leg-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">RDL</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex8" data-title="Glute Bridges"><img src="https://ik.imagekit.io/Sankit/leg-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Glute Bridges</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex9" data-title="Hack Squat"><img src="https://ik.imagekit.io/Sankit/leg-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Hack Squat</span></div>
+                <div class="exercise-block" data-target="page-sunday-ex10" data-title="Goblet Squat"><img src="https://ik.imagekit.io/Sankit/leg-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Goblet Squat</span></div>
+            </div>
+        </div>
+
+        <div id="page-cardio" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-cardio-ex1" data-title="Treadmill"><img src="https://ik.imagekit.io/Sankit/cardio-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Treadmill</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex2" data-title="Cycling"><img src="https://ik.imagekit.io/Sankit/cardio-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Cycling</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex3" data-title="Elliptical"><img src="https://ik.imagekit.io/Sankit/cardio-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Elliptical</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex4" data-title="Rowing"><img src="https://ik.imagekit.io/Sankit/cardio-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Rowing</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex5" data-title="Jump Rope"><img src="https://ik.imagekit.io/Sankit/cardio-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Jump Rope</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex6" data-title="Burpees"><img src="https://ik.imagekit.io/Sankit/cardio-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Burpees</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex7" data-title="Stair Climber"><img src="https://ik.imagekit.io/Sankit/cardio-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Stair Climber</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex8" data-title="High Knees"><img src="https://ik.imagekit.io/Sankit/cardio-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">High Knees</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex9" data-title="Jumping Jacks"><img src="https://ik.imagekit.io/Sankit/cardio-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Jumping Jacks</span></div>
+                <div class="exercise-block" data-target="page-cardio-ex10" data-title="Mountain Climber"><img src="https://ik.imagekit.io/Sankit/cardio-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Mountain Climber</span></div>
+            </div>
+        </div>
+
+        <div id="page-calf" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-calf-ex1" data-title="Standing Raise"><img src="https://ik.imagekit.io/Sankit/calf-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Standing Raise</span></div>
+                <div class="exercise-block" data-target="page-calf-ex2" data-title="Seated Raise"><img src="https://ik.imagekit.io/Sankit/calf-ex2.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Seated Raise</span></div>
+                <div class="exercise-block" data-target="page-calf-ex3" data-title="Donkey Raise"><img src="https://ik.imagekit.io/Sankit/calf-ex3.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Donkey Raise</span></div>
+                <div class="exercise-block" data-target="page-calf-ex4" data-title="Leg Press Calf"><img src="https://ik.imagekit.io/Sankit/calf-ex4.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Leg Press Calf</span></div>
+                <div class="exercise-block" data-target="page-calf-ex5" data-title="Single Leg Raise"><img src="https://ik.imagekit.io/Sankit/calf-ex5.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Single Leg Raise</span></div>
+                <div class="exercise-block" data-target="page-calf-ex6" data-title="Box Jumps"><img src="https://ik.imagekit.io/Sankit/calf-ex6.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Box Jumps</span></div>
+                <div class="exercise-block" data-target="page-calf-ex7" data-title="Jump Rope"><img src="https://ik.imagekit.io/Sankit/calf-ex7.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Jump Rope</span></div>
+                <div class="exercise-block" data-target="page-calf-ex8" data-title="Farmer Carry"><img src="https://ik.imagekit.io/Sankit/calf-ex8.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Farmer Carry (Toes)</span></div>
+                <div class="exercise-block" data-target="page-calf-ex9" data-title="Smith Machine"><img src="https://ik.imagekit.io/Sankit/calf-ex9.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Smith Machine Raise</span></div>
+                <div class="exercise-block" data-target="page-calf-ex10" data-title="Tibialis Raise"><img src="https://ik.imagekit.io/Sankit/calf-ex10.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Tibialis Raise</span></div>
+            </div>
+        </div>
+        
+        <div id="page-protips" class="page">
+            <div class="space-y-5">
+                <div class="exercise-block" data-target="page-protips-ex1" data-title="Warm-up"><img src="https://ik.imagekit.io/Sankit/tip-ex1.jpg" class="exercise-list-image"><div class="exercise-list-overlay"></div><span class="exercise-list-title">Warm-up</span></div>
+            </div>
+        </div>
+
+
+        <div id="page-monday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Bench Press</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Incline Machine</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Decline Machine</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Pec Deck</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>DB Press</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Push-ups</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Crossover</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>DB Fly</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Incline Fly</h2><p>Details...</p></div></div>
+        <div id="page-monday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/chest-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Incline Bench</h2><p>Details...</p></div></div>
+
+        <div id="page-tuesday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Lat Pulldown</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Seated Row</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Bent Over Row</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Pull-ups</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Deadlift</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>T-Bar Row</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>DB Row</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Back Ext</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Straight Arm</h2><p>Details...</p></div></div>
+        <div id="page-tuesday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/back-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>One Arm Row</h2><p>Details...</p></div></div>
+
+        <div id="page-wednesday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Bicep Curls</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Hammer Curls</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Preacher</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Concentration</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Wrist Curls</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Reverse Wrist</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Cable Curls</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Barbell Curl</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Drag Curl</h2><p>Details...</p></div></div>
+        <div id="page-wednesday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/bicep-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Zottman Curl</h2><p>Details...</p></div></div>
+
+        <div id="page-thursday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Overhead Cable</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>One Arm Cable</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Skullcrushers</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Pushdown</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Overhead DB</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Kickbacks</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Diamond Pushup</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Rope Pushdown</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Dips</h2><p>Details...</p></div></div>
+        <div id="page-thursday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/tricep-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Close Grip</h2><p>Details...</p></div></div>
+        
+        <div id="page-forearm-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Wrist Curl</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Reverse Wrist</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Hammer Curl</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Farmer's Walk</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Plate Pinch</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Dead Hang</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Reverse BB Curl</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Zottman Curl</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Wrist Roller</h2><p>Details...</p></div></div>
+        <div id="page-forearm-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/forearm-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Towel Pull-up</h2><p>Details...</p></div></div>
+
+        <div id="page-friday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Overhead Press</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Lateral Raise</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Front Raise</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Reverse Pec</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Arnold Press</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Upright Row</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Face Pulls</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Shrugs</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Seated Press</h2><p>Details...</p></div></div>
+        <div id="page-friday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/shoulder-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Cable Lateral</h2><p>Details...</p></div></div>
+
+        <div id="page-saturday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Crunches</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Leg Raises</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Plank</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Russian Twist</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Farmer Walk</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Dead Hangs</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Grip Squeeze</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Cable Crunch</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Bicycle</h2><p>Details...</p></div></div>
+        <div id="page-saturday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/abs-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Hanging Raise</h2><p>Details...</p></div></div>
+
+        <div id="page-sunday-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Squats</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Leg Press</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Lunges</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Leg Curls</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Leg Ext</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Calf Raises</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>RDL</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Glute Bridge</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Hack Squat</h2><p>Details...</p></div></div>
+        <div id="page-sunday-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/leg-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Goblet Squat</h2><p>Details...</p></div></div>
+
+        <div id="page-cardio-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Treadmill</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Cycling</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Elliptical</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Rowing</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Jump Rope</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Burpees</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Stair Climber</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>High Knees</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Jumping Jack</h2><p>Details...</p></div></div>
+        <div id="page-cardio-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/cardio-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Mtn Climber</h2><p>Details...</p></div></div>
+
+        <div id="page-calf-ex1" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex1.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Standing</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex2" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex2.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Seated</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex3" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex3.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Donkey</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex4" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex4.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Leg Press</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex5" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex5.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Single Leg</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex6" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex6.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Box Jumps</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex7" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex7.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Jump Rope</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex8" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex8.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Farmer Carry</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex9" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex9.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Smith Mach</h2><p>Details...</p></div></div>
+        <div id="page-calf-ex10" class="page"><div class="image-section"><video class="exercise-image" controls loop playsinline><source src="https://ik.imagekit.io/Sankit/calf-ex10.mp4" type="video/mp4"></video></div><div class="detail-content"><h2>Tibialis</h2><p>Details...</p></div></div>
+
+        <div id="page-protips-ex1" class="page"><div class="image-section"><img src="https://ik.imagekit.io/Sankit/tip-ex1.jpg" class="exercise-image"></div><div class="detail-content"><h2>Tip: Warm-up</h2><p>Always warm up before lifting.</p></div></div>
+
+    </div>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-nav="page-home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22L12 3Z" /></svg>
+            <span>Exercise</span>
+        </button>
+        <button class="nav-item" data-nav="page-tools">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71 20.29L20.29 21.71A1 1 0 0 1 18.88 21.71L7 9.85A3.81 3.81 0 0 1 6 10A4 4 0 0 1 2.22 4.7L4.76 7.24L5.29 6.71L6.71 5.29L7.24 4.76L4.7 2.22A4 4 0 0 1 10 6A3.81 3.81 0 0 1 9.85 7L21.71 18.88A1 1 0 0 1 21.71 20.29M2.29 18.88A1 1 0 0 0 2.29 20.29L3.71 21.71A1 1 0 0 0 5.12 21.71L10.59 16.25L7.76 13.41L2.29 18.88Z" /></svg>
+            <span>Tools</span>
+        </button>
+        <button class="nav-item" data-nav="page-more">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" /></svg>
+            <span>More</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

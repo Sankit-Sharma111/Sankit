@@ -33,8 +33,6 @@
             color: #007bff; /* Accent color */
         }
 
-
-
         /* Tracker Styling */
         .tracker-info {
             display: flex;
@@ -52,49 +50,45 @@
             color: #333;
         }
     
-           /* Add these fixes below your existing CSS */
     html, body {
       width: 100%;
       height: 100%;
-      overflow-x: hidden; /* prevent horizontal scroll */
+      overflow-x: hidden;
     }
 
     .grid.grid-cols-2 {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* ✅ responsive grid */
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     .day-block, .exercise-block {
-      font-size: clamp(0.9rem, 2vw, 1.1rem); /* ✅ text adjusts automatically */
-      padding: 1rem;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
 
     .page {
-      padding: 1rem; /* ✅ consistent mobile spacing */
-      /* NEW FIX: Add padding at bottom for fixed nav bar */
-      padding-bottom: 5rem;
+      padding: 1rem;
+      padding-bottom: 80px; /* Increased for Bottom Bar */
     }
 
     .header {
       padding: 0.75rem 1rem;
     }
 
-    /* Optional: Make titles shrink on small screens */
     .home-title, .page-title {
       font-size: clamp(1.25rem, 4vw, 1.8rem);
     }
         /* --- Base & Resets --- */
         :root {
             /* Light Theme */
-            --bg-primary: #ffffff;
+            --bg-primary: #d5dfff;
             --bg-secondary: #f3f4f6;
-            --bg-day-block: #a5f3fc;
-            --bg-day-block-dark: #0e7490;
             --text-primary: #111827;
             --text-secondary: #4b5563;
-            --text-day-block: #1f2937;
-            --text-day-block-dark: #ecfeff;
             --header-bg: rgba(255, 255, 255, 0.7);
             --hover-bg: #e5e7eb;
+            --nav-bg: #ffffff;
+            --nav-border: #e5e7eb;
+            --nav-active: #007bff;
+            --nav-inactive: #6b7280;
 
             /* Dark Theme */
             --dark-bg-primary: #111827;
@@ -103,6 +97,8 @@
             --dark-text-secondary: #d1d5db;
             --dark-header-bg: rgba(17, 24, 39, 0.7);
             --dark-hover-bg: #374151;
+            --dark-nav-bg: #1f2937;
+            --dark-nav-border: #374151;
         }
 
         html {
@@ -118,7 +114,7 @@
             color: var(--text-primary);
             overscroll-behavior: none;
             overflow: hidden;
-            height: 100vh; /* Fallback */
+            height: 100vh;
             height: 100dvh;
         }
 
@@ -130,19 +126,12 @@
             --text-secondary: var(--dark-text-secondary);
             --header-bg: var(--dark-header-bg);
             --hover-bg: var(--dark-hover-bg);
+            --nav-bg: var(--dark-nav-bg);
+            --nav-border: var(--dark-nav-border);
         }
         
-        .dark .day-block {
-            background-color: var(--bg-day-block-dark);
-            color: var(--text-day-block-dark);
-        }
-        
-        .dark .day-block h2 {
-            color: white;
-        }
-        
-        .dark .day-block p {
-            color: var(--text-day-block-dark);
+        .dark .exercise-block, .dark .day-block {
+            background-color: var(--dark-bg-secondary);
         }
 
         /* --- Page Navigation System --- */
@@ -162,15 +151,19 @@
             overflow-y: auto;
             color: var(--text-primary);
             padding: 1.5rem;
-            /* Adjust padding to make space for the fixed nav bar */
-            padding-bottom: 5rem;
+            padding-bottom: 80px; /* Padding for bottom nav */
         }
 
-        #page-home {
+        #page-home, #page-tools, #page-more {
             transform: translateX(0);
-            visibility: visible;
+            visibility: hidden; /* Hidden by default, controlled by JS */
             z-index: 10;
             padding-top: 2rem;
+        }
+        
+        /* Active state for main tabs */
+        .tab-active {
+            visibility: visible !important;
         }
 
         .page-active {
@@ -184,48 +177,141 @@
             z-index: 10;
             visibility: visible;
         }
+        
+        .page.page-exit-right {
+            transform: translateX(100%);
+        }
+        .page-no-transition {
+            transition: none !important;
+        }
+
+        /* --- Bottom Navigation Bar --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: var(--nav-bg);
+            border-top: 1px solid var(--nav-border);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: var(--nav-inactive);
+            text-decoration: none;
+            font-size: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: var(--nav-active);
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 4px;
+            fill: currentColor;
+        }
+
 
         /* --- Reusable Components --- */
+
         .day-block {
-            background-color: var(--bg-day-block);
-            color: var(--text-day-block);
+            position: relative;
             border-radius: 1.5rem;
-            padding: 1.5rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             cursor: pointer;
+            overflow: hidden;
+            height: 150px;
+            background-color: var(--bg-secondary); 
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
         }
         .day-block:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
         }
+        .day-block-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .day-block-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+        }
+        .day-block-content {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            right: 1.5rem;
+        }
         .day-block h2 {
             margin: 0 0 0.25rem 0;
             font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 1.75rem;
             font-weight: 700;
-            color: #1f2937;
+            color: white; 
         }
         .day-block p {
             margin: 0;
-            color: #374151;
+            color: #e0e0e0;
+            font-size: 0.9rem;
         }
 
         .exercise-block {
-            background-image: linear-gradient(to right, #6ee7b7, #3b82f6);
+            position: relative;
             border-radius: 1.5rem;
-            padding: 1.25rem 1.5rem;
-            color: white;
-            font-weight: 600;
-            text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             cursor: pointer;
+            overflow: hidden;
+            height: 150px;
+            background-color: var(--bg-secondary);
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
         }
         .exercise-block:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(96, 165, 250, 0.3), 0 4px 6px -4px rgba(96, 165, 250, 0.3);
         }
+        .exercise-list-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .exercise-list-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+        }
+        .exercise-list-title {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1.25rem;
+            text-align: left;
+        }
+        
         
         .header {
             position: sticky;
@@ -238,8 +324,7 @@
             background-color: var(--header-bg);
             backdrop-filter: blur(4px);
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            /* Adjust padding for the page content */
-            margin: -1.5rem -1.5rem 1.5rem -1.5rem; 
+            margin: -1.5rem -1.5rem 2rem -1.5rem; 
         }
 
         .header-btn {
@@ -272,7 +357,7 @@
             padding: 0 1rem;
         }
 
-        /* --- Utility Classes (Mini-Tailwind) --- */
+        /* --- Utility Classes --- */
         .hidden { display: none !important; }
         .grid { display: grid; }
         .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -314,72 +399,12 @@
         .detail-content p {
             margin-bottom: 1rem;
         }
-        .detail-content ul {
-            list-style-position: inside;
-            list-style-type: disc;
-            margin-left: 0.5rem;
-        }
-        .detail-content li {
-            margin-bottom: 0.5rem;
-        }
         
-        /* --- Detail Page Navigation (New Styles) --- */
-        .detail-nav {
-            position: sticky;
-            bottom: 0%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background-color: var(--header-bg); /* Use header background for consistency */
-            backdrop-filter: blur(4px);
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
-          z-index: 30;  /* Ensure it's above other pages */
-        }
-        
-        .detail-nav-btn {
-            flex-grow: 1;
-            padding: 0.75rem 1rem;
-            border: none;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s, opacity 0.2s;
+        /* Empty State for Tools/More */
+        .empty-state {
             text-align: center;
-        }
-
-        .btn-prev {
-            margin-right: 0.5rem;
-            background-color: var(--bg-secondary);
+            margin-top: 50%;
+            transform: translateY(-50%);
             color: var(--text-secondary);
         }
-
-        .dark .btn-prev {
-            background-color: var(--dark-hover-bg);
-            color: var(--dark-text-secondary);
-        }
-
-        .btn-next {
-            margin-left: 0.5rem;
-            background-image: linear-gradient(to right, #3b82f6, #6ee7b7); /* Match exercise block */
-            color: white;
-        }
-        
-        .detail-nav-btn.hidden {
-            opacity: 0;
-            pointer-events: none;
-            visibility: hidden;
-        }
-        
-        .detail-nav-btn svg {
-            vertical-align: middle;
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-        
+    
